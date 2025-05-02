@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Taimoor khan">
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="portfolio_web">
+  <link rel="apple-touch-icon" href="icons/image.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <title>Taimoor khan</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Keep the background black until Flutter loads -->
+  <meta name="theme-color" content="#000000" />
+  <style>
+    html, body {
+      background-color: #000;
+      margin: 0;
+      height: 100%;
+    }
+    /* Hide overflow until Flutter paints */
+    #splash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #000;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <!-- simple black overlay -->
+  <div id="splash"></div>
+
+  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    window.addEventListener('flutter-first-frame', () => {
+      const s = document.getElementById('splash');
+      if (s) s.remove();
+    });
+  </script>
+</body>
+</html>
